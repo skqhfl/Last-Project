@@ -36,7 +36,9 @@ class Particle {
     stroke(0, this.lifespan);
     strokeWeight(2);
     fill(127, this.lifespan);
-    circle(this.position.x, this.position.y, 1);
+    circle(this.position.x, this.position.y, 10);
+    fill(255, this.lifespan);
+    circle(this.position.y, this.position.x, 10);
   }
 
   // Is the particle still useful?
