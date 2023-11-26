@@ -16,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(20);
   for (let emitter of emitters) {
     emitter.run();
     emitter.addParticle();
