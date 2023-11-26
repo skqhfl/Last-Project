@@ -1,5 +1,5 @@
 // One ParticleSystem
-let emitters = [];
+let emitter;
 
 //{!1} One repeller
 let repeller;
@@ -14,7 +14,7 @@ function setup() {
 
 function draw() {
   background(255);
-  for (let emitter of emitters) {
+    
   repeller.setPower(mouseX);
   repeller.move(0.5);
   
@@ -32,8 +32,4 @@ function draw() {
 
   repeller.show();
   att.show();
-  }
-}
-function mousePressed() {
-  emitters.push(new Emitter(mouseX, mouseY));
 }
