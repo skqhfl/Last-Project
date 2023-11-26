@@ -10,10 +10,11 @@ class Emitter {
     this.particles.push(new Particle(this.origin.x, this.origin.y));
   }
 
-  applyForce(force) {
+  applyForce(force, force2) {
     //{!3} Applying a force as a p5.Vector
     for (let particle of this.particles) {
       particle.applyForce(force);
+      particle.applyForce(force2);
     }
   }
 
@@ -21,7 +22,9 @@ class Emitter {
     //{!4} Calculating a force for each Particle based on a Repeller
     for (let particle of this.particles) {
       let force = repeller.repel(particle);
+      let force2 = repeller.repel(particle);
       particle.applyForce(force);
+      particle.applyForce(force2);
     }
   }
   
@@ -30,6 +33,15 @@ class Emitter {
     for (let particle of this.particles) {
       let force = attractor.pull(particle);
       particle.applyForce(force);
+      particle.applyForce(force2);
+    }
+  }
+  applyAttractor(attractor2) {
+    //{!4} Calculating a force for each Particle based on a Repeller
+    for (let particle of this.particles) {
+      let force2 = attractor2.pull(particle);
+      particle.applyForce(force2);
+      particle.applyForce(force2);
     }
   }
 
