@@ -8,13 +8,13 @@ let att;
 function setup() {
   createCanvas(400, 400);
   emitter = new Emitter(width / 2, height/2);
-  repeller = new Repeller(width / 2, 350);
+  // repeller = new Repeller(width / 2, 350);
   att = new Attractor(20, height/2);
 }
 
 function draw() {
   background(255);
-    
+    repeller = new Repeller(mouseX, mouseY);
   repeller.setPower(mouseX);
   repeller.move(0.5);
   
